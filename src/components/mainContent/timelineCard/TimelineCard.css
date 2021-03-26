@@ -1,0 +1,79 @@
+.timeline-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  text-align: justify;
+  border-radius: 10px;
+  box-shadow: 9px 9px 18px #e3e3e3, -9px -9px 18px #ffffff;
+
+  margin-top: 40px;
+  width: 750px;
+}
+.logo {
+  width: 70px;
+  height: 70px;
+  image-rendering: pixelated;
+  border-radius: 50%;
+}
+.edu-details {
+  display: flex;
+  align-items: center;
+}
+.edu-details a {
+  color: #1a659e;
+  font-size: 20px;
+  font-weight: 500;
+
+  text-decoration: none;
+  margin: 0 10px;
+}
+.about-me {
+  margin-bottom: 40px;
+}
+.about-me span {
+  font-weight: 500;
+  font-size: 18px;
+}
+@media screen and (max-width: 770px) {
+  .timeline-card {
+    width: 540px;
+  }
+  .timeline-card p {
+    font-size: 14px;
+  }
+  .edu-details a {
+    font-size: 14px;
+  }
+  .about-me span {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .timeline-card {
+    padding: 8px;
+    width: 340px;
+  }
+  .edu-details {
+    font-size: 14px;
+  }
+  .edu-details a {
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
+    margin-left: 3px;
+  }
+  .timeline-card p {
+    line-height: 22px;
+    font-size: 13px;
+  }
+  .about-me span {
+    font-size: 13px;
+  }
+  .about-me p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,30 @@
+/* .Typewriter__cursor {
+  background-color: black;
+} */
+.animation-text p {
+  font-size: 22px;
+  display: inline;
+}
+.animation-text div {
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: 10px;
+  display: inline;
+}
+@media screen and (max-width: 650px) {
+  .hi-there-text {
+    display: none;
+  }
+  .animation-text {
+    width: 250px;
+    position: relative;
+    top: -60px;
+    margin: 0 auto;
+  }
+  .animation-text p {
+    font-size: 16px;
+  }
+  .animation-text div {
+    font-size: 16px;
+  }
+}

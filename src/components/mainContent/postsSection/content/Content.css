@@ -1,0 +1,35 @@
+.post-title {
+  margin-left: 20px;
+}
+.post-content {
+  width: 650px;
+  height: 380px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px 20px;
+  text-align: justify;
+}
+.question p {
+  font-size: 14px;
+}
+
+.solution-container {
+  margin-top: 20px;
+}
+.solution-code {
+  padding: 20px;
+  background-color: #eeeeee;
+  border-left: 6px solid #1e7f9d;
+}
+
+@media screen and (max-width: 650px) {
+  .post-content {
+    width: 310px;
+  }
+  .solution-container {
+    overflow-x: auto;
+  }
+  .solution-code {
+    width: 600px;
+  }
+}

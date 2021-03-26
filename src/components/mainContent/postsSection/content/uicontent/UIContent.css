@@ -1,0 +1,22 @@
+.uicontent-title {
+  margin-left: 20px;
+}
+.uidesign-mockup {
+  width: 650px;
+  height: 380px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px 20px;
+}
+.uidesign-mockup img {
+  width: 650px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 650px) {
+  .uidesign-mockup {
+    width: 320px;
+  }
+  .uidesign-mockup img {
+    width: 320px;
+  }
+}
