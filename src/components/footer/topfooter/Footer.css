@@ -16,12 +16,15 @@
 .footer-list li a:hover {
   color: #fd494a;
   box-shadow: 0 2px #fd494a;
+  fill: #fd494a;
+  transform: translateY(-20%);
 }
 .icon {
   margin-left: 3px;
   width: 16px;
   height: 16px;
 }
+
 @media screen and (max-width: 650px) {
   .footer-list li {
     position: relative;

@@ -3,7 +3,7 @@ const UIContentData = [
     id: 1,
     title: "Linkedin Redesign",
     titleId: "uidesign-linkedin-redesign",
-    imagelink: "uidesignimg/linkedin2.png",
+    imagelink: "uidesignimg/linkedin.png",
   },
   {
     id: 2,
