@@ -4,9 +4,9 @@
   align-items: center;
   padding: 10px 30px;
   text-align: justify;
-  border-radius: 10px;
-  box-shadow: 9px 9px 18px #e3e3e3, -9px -9px 18px #ffffff;
-
+  border-radius: 6px;
+  /* box-shadow: 9px 9px 18px #e3e3e3, -9px -9px 18px #ffffff; */
+  border: 1px solid #30363d;
   margin-top: 40px;
   width: 750px;
 }
@@ -21,7 +21,7 @@
   align-items: center;
 }
 .edu-details a {
-  color: #1a659e;
+  color: #58a6ff;
   font-size: 20px;
   font-weight: 500;
 

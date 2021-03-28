@@ -10,7 +10,6 @@
   margin-top: 60px;
   margin-bottom: 30px;
   justify-content: center;
-  /* margin: 30px 30px; */
 }
 .filterbtn-container {
   display: inline;
@@ -21,29 +20,28 @@
   margin-left: 20px;
 }
 .filterbtn {
-  color: #2b061e;
+  color: #8b949e;
+  background-color: #30363d;
   border-color: transparent;
-  background: transparent;
+  /* background: transparent; */
   transition: 0.25s ease-in;
   border-radius: 0;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
+  padding: 2px 6px;
   border-style: solid;
   outline: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 .filterbtn:hover {
-  /* color: #ffffff; */
-  color: #f5f5f5;
-  background-color: #2b061e;
+  color: #f0f6fc;
+  background-color: #1f6feb;
   border-radius: 5px;
 }
 .activebtn {
-  color: #f5f5f5;
-  /* background-color: #2b061e; */
-  /* background-color: #d74654; */
-  background-color: #2b061e;
-
+  color: #f0f6fc;
+  background-color: #1f6feb;
   border-radius: 5px;
 }
 .posts-list {
@@ -59,7 +57,6 @@
 
 .posts-rightside {
   padding-top: 20px;
-  /* background-color: #ffffff; */
   border-radius: 10px;
 }
 @media screen and (max-width: 1015px) {

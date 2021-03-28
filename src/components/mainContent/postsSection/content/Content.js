@@ -12,7 +12,7 @@ const Content = ({ value }) => {
       <div className="post-content">
         <div className="question">
           <p>{explaination}</p>
-          <p style={{ fontWeight: 600 }}>Example</p>
+          <p style={{ fontWeight: 600, color: "#c9d1d9" }}>Example</p>
           <code className="output-example">
             Input: {input}
             <br />

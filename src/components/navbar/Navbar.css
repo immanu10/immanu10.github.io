@@ -15,10 +15,9 @@
 }
 
 .nav-button {
-  /* color: #f638dc; */
-  /* color: #02a9ea; */
-  color: #086788;
-  /* color: #e0e0e0; */
+  /* color: #086788; */
+
+  color: #8b949e;
   text-transform: capitalize;
   margin-right: 2rem;
   padding: 10px 20px;
@@ -36,19 +35,12 @@
 }
 
 .nav-button:hover {
-  /* color: #4a0d67; */
-  /* background: #f2f8ff; */
-  /* background: #e9f3ff; */
-  /* border-color: #0f6fff; */
-  box-shadow: 0 3px #086788;
+  box-shadow: 0 3px #f9826c;
 }
 
 .active-btn {
-  /* color: #fff; */
-  /* background: #f2f8ff; */
-  /* background: #ed254e; */
-  /* border-color: #0f6fff; */
-  box-shadow: 0 3px #086788;
+  color: #c9d1d9;
+  box-shadow: 0 3px #f9826c;
 }
 
 .projects {

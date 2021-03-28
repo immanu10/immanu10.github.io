@@ -11,7 +11,7 @@ const projectData = [
     id: 2,
     name: "Covid-19 Tracker",
     description:
-      "Corona status website developed using React JS, Chart JS and Material-UI",
+      "Corona status website developed using React JS, Chart JS and Material-UI.",
     image: "images/coronaProject.png",
     demolink: "https://immanu10.github.io/corona-status/",
     codelink: "https://github.com/immanu10/corona-status",

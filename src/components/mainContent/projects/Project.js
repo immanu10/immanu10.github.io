@@ -4,9 +4,8 @@ import "./Project.css";
 const Project = ({ name, description, image, demolink, codelink }) => {
   return (
     <div className="project-card">
-      <div className="project-bgimg">
-        <img src={image} alt="" className="project-img" />
-      </div>
+      <img src={image} alt="" className="project-img" />
+
       <h2 className="project-title">{name}</h2>
       <p className="project-desc">{description}</p>
       <div className="project-link">

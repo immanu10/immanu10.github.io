@@ -10,7 +10,8 @@
   align-items: center;
   text-decoration: none;
   font-weight: 500;
-  color: #121212;
+  color: #f9826c;
+  fill: #f9826c;
   transition: 0.25s ease-in-out;
 }
 .footer-list li a:hover {
