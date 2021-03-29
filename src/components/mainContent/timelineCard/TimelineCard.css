@@ -42,6 +42,10 @@
   .timeline-card p {
     font-size: 14px;
   }
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
   .edu-details a {
     font-size: 14px;
   }
@@ -51,8 +55,8 @@
 }
 @media screen and (max-width: 650px) {
   .timeline-card {
+    width: 320px;
     padding: 8px;
-    width: 340px;
   }
   .edu-details {
     font-size: 14px;
@@ -62,8 +66,8 @@
   }
 
   .logo {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     margin-left: 3px;
   }
   .timeline-card p {
@@ -74,6 +78,6 @@
     font-size: 13px;
   }
   .about-me p {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
