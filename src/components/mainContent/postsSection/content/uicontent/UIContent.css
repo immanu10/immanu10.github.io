@@ -8,6 +8,18 @@
   overflow-y: auto;
   padding: 10px 20px;
 }
+.uidesign-mockup::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.uidesign-mockup::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #0d1117;
+}
+
+.uidesign-mockup::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #242c37;
+}
 .uidesign-mockup img {
   width: 650px;
   border-radius: 5px;
