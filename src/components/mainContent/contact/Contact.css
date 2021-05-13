@@ -1,7 +1,7 @@
 .contact-container {
   margin: 40px auto;
   width: 460px;
-  height: 160px;
+  /* height: 160px; */
   /* box-shadow: 9px 9px 18px #e3e3e3, -9px -9px 18px #ffffff; */
   border: 1px solid #30363d;
 
@@ -14,7 +14,7 @@
 }
 @media screen and (max-width: 650px) {
   .contact-container {
-    width: 340px;
+    width: 300px;
     padding: 10px;
   }
   .contact-container p {
