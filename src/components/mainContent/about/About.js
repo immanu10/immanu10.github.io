@@ -9,10 +9,10 @@ const About = () => {
     <div className="about">
       <EduOrExp
         title="SDE Intern at"
-        link="https://www.ahalytix.com/"
-        name="Ahalytix"
+        link="https://www.tuzo.ai/"
+        name="Tuzo"
         timeline="2021-Present"
-        months="1 mos"
+        months="2 mos"
         logoimg=""
       />
       <EduOrExp
