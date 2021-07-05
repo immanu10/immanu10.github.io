@@ -12,14 +12,14 @@ const About = () => {
         link="https://www.tuzo.ai/"
         name="Tuzo"
         timeline="2021-Present"
-        months="2 mos"
+        months="3 mos"
         logoimg=""
       />
       <EduOrExp
         title="Grad BE (CSE) from"
         link="https://sjbit.edu.in/"
         name="SJB Institute of Technology"
-        timeline="2017-Present"
+        timeline="2017-2021"
         logoimg="images/sjbitLogo.jpg"
       />
       <Aboutme />
