@@ -1,5 +1,4 @@
 import "./globals.css";
-import clsx from "clsx";
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import Topbar from "./components/topbar";
@@ -26,7 +25,7 @@ export default function RootLayout({
         <Providers>
           <div className="min-h-screen flex flex-col container pt-8">
             <Topbar />
-            <main className="flex-1 mb-4">{children}</main>
+            <main className="flex-1 mb-8">{children}</main>
             <Terminal />
           </div>
         </Providers>

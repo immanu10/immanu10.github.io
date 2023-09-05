@@ -1,8 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import { useTheme } from "next-themes";
 
-const commands = ["cd", "help", "welcome", "clear"];
+const commands = ["cd", "help", "welcome", "clear", "theme"];
 
 const routes = {
   about: "/",
@@ -12,7 +13,7 @@ const routes = {
 const helpCommand = [
   {
     cmd: "cd <page-name>",
-    desc: " eg: cd projects",
+    desc: "eg: cd <projects | about>",
   },
   {
     cmd: "welcome",
@@ -26,12 +27,19 @@ const helpCommand = [
     cmd: "clear",
     desc: "clear the terminal",
   },
+  {
+    cmd: "theme <mode>",
+    desc: "eg: theme <dark | light>",
+  },
 ];
 export default function Terminal() {
   const [history, setHistory] = useState<string[]>(["welcome"]);
-  const terminalRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const terminalEndRef = useRef<HTMLDivElement>(null);
+
   const [value, setValue] = useState("");
   const router = useRouter();
+  const { setTheme } = useTheme();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -40,6 +48,12 @@ export default function Terminal() {
       if (Object.keys(routes).includes(cmdString[1])) {
         const path = cmdString[1] as keyof typeof routes;
         router.push(routes[path]);
+      }
+    }
+    if (cmdString[0] === "theme") {
+      if (["dark", "light"].includes(cmdString[1])) {
+        const theme = cmdString[1];
+        setTheme(theme);
       }
     }
     setHistory([...history, value]);
@@ -51,7 +65,7 @@ export default function Terminal() {
   };
 
   const scrollToBottom = () => {
-    terminalRef.current?.scrollIntoView({ behavior: "smooth" });
+    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -59,45 +73,59 @@ export default function Terminal() {
   }, [history.length]);
 
   return (
-    <div className="bg-gray-100 dark:bg-[#1c1c1c] px-2 py-1 rounded-sm text-sm">
-      {history.map((data, i) => {
-        const cmdString = data.trim().split(" ");
-        const isValid = commands.includes(cmdString[0]);
-        return (
-          <div key={i}>
-            <p>
-              <span className="text-yellow-500 dark:text-yellow-300">{`-> `}</span>
-              <span className="text-pink-500 dark:text-pink-300">{`~ `}</span>
-              {data}
-            </p>
-            {isValid ? (
-              <CmdResult
-                type={cmdString[0]}
-                arg={cmdString[1]}
-                clear={clearTerminal}
-              />
-            ) : data === "" ? null : (
-              <p>{`${data}: Command not found`}</p>
-            )}
-          </div>
-        );
-      })}
-      <div className="flex">
-        <p>
-          <span className="text-yellow-500 dark:text-yellow-300">{`-> `}</span>
-          <span className="text-pink-500 dark:text-pink-300">{`~ `}</span>
-        </p>
-
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            className="flex-1 ml-2 border-none outline-none bg-transparent"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-        </form>
+    <div
+      className="bg-gray-100 dark:bg-[#171717] pb-1 rounded-tl-md rounded-tr-md text-sm overflow-hidden"
+      onClick={() => inputRef.current?.focus()}
+    >
+      <div className="h-6 bg-zinc-300 dark:bg-[#323131] flex pl-2">
+        <div className="flex space-x-2 items-center my-auto">
+          <div className="h-3 w-3 bg-red-500 rounded-full"></div>
+          <div className="h-3 w-3 bg-yellow-500 rounded-full"></div>
+          <div className="h-3 w-3 bg-green-600 rounded-full"></div>
+        </div>
       </div>
-      <div ref={terminalRef} />
+      <div className="px-1 py-1">
+        {history.map((data, i) => {
+          const cmdString = data.trim().split(" ");
+          const isValid = commands.includes(cmdString[0]);
+          return (
+            <div key={i}>
+              <p>
+                <span className="text-yellow-500 dark:text-yellow-300">{`-> `}</span>
+                <span className="text-pink-500 dark:text-pink-300">{`~ `}</span>
+                {data}
+              </p>
+              {isValid ? (
+                <CmdResult
+                  type={cmdString[0]}
+                  arg={cmdString[1]}
+                  clear={clearTerminal}
+                />
+              ) : data === "" ? null : (
+                <p>{`${data}: Command not found`}</p>
+              )}
+            </div>
+          );
+        })}
+        <div className="flex">
+          <p>
+            <span className="text-yellow-500 dark:text-yellow-300">{`-> `}</span>
+            <span className="text-pink-500 dark:text-pink-300">{`~ `}</span>
+          </p>
+
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              className="flex-1 ml-2 border-none outline-none bg-transparent"
+              autoFocus
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              ref={inputRef}
+            />
+          </form>
+        </div>
+      </div>
+      <div ref={terminalEndRef} />
     </div>
   );
 }
@@ -127,7 +155,11 @@ function CmdResult({
     );
   if (type === "cd") {
     if (!Object.keys(routes).includes(arg))
-      return <p>{`cd: ${arg}: No such page name`}</p>;
+      return <p>{`${type} ${arg}: No such page name`}</p>;
+  }
+  if (type === "theme") {
+    if (!["dark", "light"].includes(arg))
+      return <p>{`${type} ${arg}: No such theme exists`}</p>;
   }
   if (type === "clear") {
     clear();

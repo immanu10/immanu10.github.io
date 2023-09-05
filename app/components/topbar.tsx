@@ -26,7 +26,7 @@ export default function Topbar() {
           <p className="text-sm text-neutral-500">
             {`software engineer at `}
             <a
-              className="underline"
+              className="underline underline-offset-4"
               rel="noopener noreferrer"
               target="_blank"
               href="https://geekyants.com/"
@@ -73,7 +73,7 @@ export default function Topbar() {
           })}
         </div>
         <a
-          className="underline"
+          className="underline underline-offset-4"
           rel="noopener noreferrer"
           target="_blank"
           href="https://google.com/"
