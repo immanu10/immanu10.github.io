@@ -14,7 +14,7 @@ const navItems = {
   },
 };
 
-export default function Topbar() {
+export default function Topbar({ resumeLink }: { resumeLink: string }) {
   let pathname = usePathname() || "/";
   const { theme, setTheme } = useTheme();
 
@@ -76,7 +76,7 @@ export default function Topbar() {
           className="underline underline-offset-4"
           rel="noopener noreferrer"
           target="_blank"
-          href="https://google.com/"
+          href={resumeLink}
         >
           resume
         </a>

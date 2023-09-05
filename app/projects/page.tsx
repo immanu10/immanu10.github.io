@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 const API_ENDPOINT = "https://api.github.com/graphql";
 const query = `
   query {
@@ -42,6 +44,11 @@ async function getPinnedProjects() {
 
   return (await res.json()) as PinnedRepo;
 }
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "My projects on the internet",
+};
 
 export default async function Page() {
   const { data } = await getPinnedProjects();

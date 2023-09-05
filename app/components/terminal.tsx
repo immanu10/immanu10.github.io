@@ -118,6 +118,7 @@ export default function Terminal() {
               <input
                 type="text"
                 className="flex-1 ml-2 border-none outline-none bg-transparent"
+                autoFocus
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 ref={inputRef}
