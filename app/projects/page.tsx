@@ -35,7 +35,7 @@ async function getPinnedProjects() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${process.env.GH_API_ACCESS_TOKEN}`,
     },
     body: JSON.stringify({ query: query }),
   });
@@ -45,9 +45,12 @@ async function getPinnedProjects() {
 
 export default async function Page() {
   const { data } = await getPinnedProjects();
+
+  if (!data) return <p className="text-sm">Something went wrong!</p>;
+
   return (
     <ul className="space-y-4">
-      {data.viewer.pinnedItems.nodes.map((repo) => (
+      {data?.viewer?.pinnedItems?.nodes.map((repo) => (
         <li key={repo.id}>
           <a
             className="bg-transparent border border-[#ecebeb] hover:border-[#999] dark:border-[#333] hover:dark:bg-[#ffffff05]
