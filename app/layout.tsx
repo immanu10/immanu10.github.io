@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en" className={roboto_mono.className}>
       <body className="antialiased min-h-screen">
         <Providers>
-          <div className="min-h-screen flex flex-col container pt-8">
+          <div className="flex flex-col container pt-8">
             <Topbar />
-            <main className="flex-1 mb-8">{children}</main>
+            <main className="mb-8">{children}</main>
             <Terminal />
           </div>
         </Providers>
