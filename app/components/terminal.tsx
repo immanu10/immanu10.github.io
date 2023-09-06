@@ -69,7 +69,7 @@ export default function Terminal() {
   };
 
   useEffect(() => {
-    if (history.length > 3) scrollToBottom();
+    if (history.length > 1) scrollToBottom();
   }, [history.length]);
 
   return (
@@ -114,10 +114,10 @@ export default function Terminal() {
               <span className="text-pink-500 dark:text-pink-300">{`~ `}</span>
             </p>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="flex-1 ml-2">
               <input
                 type="text"
-                className="flex-1 ml-2 border-none outline-none bg-transparent"
+                className="w-full border-none outline-none bg-transparent"
                 autoFocus
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
