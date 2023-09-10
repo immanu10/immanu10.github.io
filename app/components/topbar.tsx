@@ -4,6 +4,8 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useContext } from "react";
+import { TerminalContext } from "../providers";
 
 const navItems = {
   "/": {
@@ -17,6 +19,7 @@ const navItems = {
 export default function Topbar({ resumeLink }: { resumeLink: string }) {
   let pathname = usePathname() || "/";
   const { theme, setTheme } = useTheme();
+  const { isOpen, toggleIsOpen } = useContext(TerminalContext);
 
   return (
     <header>
@@ -49,6 +52,25 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
             className="h-7 w-7 rounded-md hover:bg-gray-100 hover:dark:bg-[#1c1c1c] flex justify-center items-center"
           >
             <BrushIcon />
+          </button>
+          <button
+            onClick={toggleIsOpen}
+            className={clsx(
+              "relative h-7 w-7 rounded-md hover:bg-gray-100 hover:dark:bg-[#1c1c1c] flex justify-center items-center",
+              {
+                "bg-gray-100 dark:bg-[#1c1c1c]": isOpen,
+              }
+            )}
+          >
+            <TerminalIcon />
+            <div
+              className={clsx(
+                "absolute w-[10px] h-[2px] bg-rose-300 rounded-lg bottom-0 left-1/2 transform -translate-x-1/2 transition-all",
+                {
+                  "opacity-0": !isOpen,
+                }
+              )}
+            ></div>
           </button>
         </div>
       </div>
@@ -153,6 +175,26 @@ function LinkedinIcon() {
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect width="4" height="12" x="2" y="9" />
       <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
+function TerminalIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-terminal h-4 w-4"
+    >
+      <polyline points="4 17 10 11 4 5" />
+      <line x1="12" x2="20" y1="19" y2="19" />
     </svg>
   );
 }
