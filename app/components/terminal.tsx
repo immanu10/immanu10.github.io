@@ -1,7 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { useTheme } from "next-themes";
+import { useDraggable } from "@dnd-kit/core";
+import { CordinateContext } from "../providers";
 
 const commands = ["cd", "help", "welcome", "clear", "theme"];
 
@@ -40,6 +42,10 @@ export default function Terminal() {
   const [value, setValue] = useState("");
   const router = useRouter();
   const { setTheme } = useTheme();
+  const coordinate = useContext(CordinateContext);
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id: "draggable",
+  });
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -74,8 +80,19 @@ export default function Terminal() {
 
   return (
     <div
+      ref={setNodeRef}
       className="relative h-60 mb-6 bg-gray-100 dark:bg-[#171717] rounded-md text-sm overflow-hidden flex flex-col"
       onClick={() => inputRef.current?.focus()}
+      style={
+        {
+          top: coordinate.y,
+          left: coordinate.x,
+          "--translate-x": `${transform?.x ?? 0}px`,
+          "--translate-y": `${transform?.y ?? 0}px`,
+        } as React.CSSProperties
+      }
+      {...attributes}
+      {...listeners}
     >
       <div className="sticky top-0 left-0 right-0 h-6 bg-zinc-300 dark:bg-[#323232] flex pl-2 ">
         <div className="flex space-x-2 items-center my-auto">
