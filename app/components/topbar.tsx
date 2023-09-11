@@ -38,7 +38,7 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
             </a>
           </p>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="relative flex items-center space-x-2 py-2">
           <SocialsLink href="https://github.com/immanu10">
             <GithubIcon />
           </SocialsLink>
@@ -56,22 +56,22 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
           <button
             onClick={toggleIsOpen}
             className={clsx(
-              "relative h-7 w-7 rounded-md hover:bg-gray-100 hover:dark:bg-[#1c1c1c] flex justify-center items-center",
+              "h-7 w-7 rounded-md hover:bg-gray-100 hover:dark:bg-[#1c1c1c] flex justify-center items-center",
               {
                 "bg-gray-100 dark:bg-[#1c1c1c]": isOpen,
               }
             )}
           >
             <TerminalIcon />
-            <div
-              className={clsx(
-                "absolute w-[10px] h-[2px] bg-rose-300 rounded-lg bottom-0 left-1/2 transform -translate-x-1/2 transition-all",
-                {
-                  "opacity-0": !isOpen,
-                }
-              )}
-            ></div>
           </button>
+          <div
+            className={clsx(
+              "absolute w-[4px] h-[4px] bg-rose-300 rounded-lg bottom-0 right-3 transition-all",
+              {
+                "opacity-0": !isOpen,
+              }
+            )}
+          ></div>
         </div>
       </div>
       <nav className="mb-6 flex justify-between items-center">
