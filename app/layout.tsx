@@ -59,7 +59,7 @@ export default async function RootLayout({
   const { data } = await getResumeRepo();
   const resumeLink =
     data?.viewer?.repository?.homepageUrl ||
-    "https://drive.google.com/file/d/1qKxpMddHBKozeEgpiURxoVHDgg6C4zzg/view?usp=sharing";
+    "https://drive.google.com/file/d/1TjuDpw66C1PDGrzjiAxsQiXBs7aVABwh/view?usp=sharing";
 
   return (
     <html lang="en" className={roboto_mono.className}>
