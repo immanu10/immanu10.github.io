@@ -16,14 +16,14 @@ export function EasterEgg() {
 
   if (!isMounted) return null;
   return (
-    <span className="inline-flex items-baseline">
-      {show && <span className="block">{textToReveal}</span>}
-      <button
-        className={`ml-2 text-red-500 underline text-xs cursor-pointer`}
+    <span className="inline">
+      {show && textToReveal}{" "}
+      <div
+        className={`text-red-500 underline text-xs cursor-pointer inline-block`}
         onClick={() => setShow(!show)}
       >
         {!show ? "more" : "less"}
-      </button>
+      </div>
     </span>
   );
 }
