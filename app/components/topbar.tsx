@@ -66,9 +66,10 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
           </button>
           <div
             className={clsx(
-              "absolute w-[4px] h-[4px] bg-rose-300 rounded-lg bottom-0 right-3 transition-all",
+              "absolute w-[4px] h-[4px] bg-green-600 rounded-lg bottom-0 right-3 transition-all",
               {
                 "opacity-0": !isOpen,
+                "animate-pulse": isOpen,
               }
             )}
           ></div>

@@ -1,10 +1,11 @@
+import { EasterEgg } from "./components/easter-egg";
+
 export default function Page() {
   return (
-    <div>
-      <p className="text-sm">
-        Coding for survival with a hint of passion on the side. Likes to work on
-        frontend. I write javascript, typescript, react, node.js
-      </p>
-    </div>
+    <p className="text-sm inline text-justify">
+      hi, I work as a fullstack engineer from Bengaluru, India. I specialize in
+      working on frontend tech and writing Javascript, Typescript, React,
+      Next.js. <EasterEgg />
+    </p>
   );
 }

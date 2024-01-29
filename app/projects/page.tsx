@@ -68,11 +68,11 @@ export default async function Page() {
             href={repo.url}
           >
             <div>
-              <span className="text-sm underline underline-offset-4 ">
+              <span className="text-sm underline underline-offset-4">
                 {repo.name}
               </span>
             </div>
-            <span className="text-sm text-neutral-500">{repo.description}</span>
+            <span className="text-xs text-neutral-500">{repo.description}</span>
           </a>
         </li>
       ))}
