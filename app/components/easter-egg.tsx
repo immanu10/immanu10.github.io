@@ -1,12 +1,11 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export function EasterEgg() {
   const [isMounted, setIsMounted] = useState(false);
   const [show, setShow] = useState(false);
   const textToReveal = useTypingEffect(
-    "Coding for survival with a hint of passion on the side.",
+    "Coding for survival with a spark of passion on the side.",
     200,
     show
   );
@@ -18,12 +17,14 @@ export function EasterEgg() {
   return (
     <span className="inline">
       {show && textToReveal}{" "}
-      <div
-        className={`text-red-500 underline text-xs cursor-pointer inline-block`}
-        onClick={() => setShow(!show)}
-      >
-        {!show ? "more" : "less"}
-      </div>
+      {!show && (
+        <div
+          className={`text-red-600 font-medium text-sm cursor-pointer inline-block`}
+          onClick={() => setShow(!show)}
+        >
+          more
+        </div>
+      )}
     </span>
   );
 }

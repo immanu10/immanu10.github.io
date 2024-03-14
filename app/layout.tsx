@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     template: "%s | immanu10",
   },
   description:
-    "Software engineer, Coding for survival with a hint of passion on the side.",
+    "Software engineer, Coding for survival with a spark of passion on the side.",
 };
 
 export default async function RootLayout({
@@ -57,9 +57,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const { data } = await getResumeRepo();
-  const resumeLink =
-    data?.viewer?.repository?.homepageUrl ||
-    "https://drive.google.com/file/d/1TjuDpw66C1PDGrzjiAxsQiXBs7aVABwh/view?usp=sharing";
+  const resumeLink = data?.viewer?.repository?.homepageUrl;
 
   return (
     <html lang="en" className={roboto_mono.className}>
