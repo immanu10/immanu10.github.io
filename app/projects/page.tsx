@@ -53,15 +53,21 @@ export const metadata: Metadata = {
 const sideProjects = [
   {
     id: 0,
+    url: "https://play.google.com/store/apps/details?id=com.immanu10.pong",
+    name: "Red Pong",
+    description: "A simple 2D arcade pong game made using React native",
+    isNew: true,
+  },
+  {
+    id: 1,
     url: "https://www.traveltree.co/",
     name: "traveltree.co",
     description: "Your travel bucketlist and profile made easy.",
+    isNew: false,
   },
 ];
 export default async function Page() {
   const { data } = await getPinnedProjects();
-
-  if (!data) return <p className="text-sm">Something went wrong!</p>;
 
   return (
     <ul className="space-y-4">
@@ -79,9 +85,11 @@ export default async function Page() {
               <span className="text-sm underline underline-offset-4">
                 {repo.name}
               </span>
-              <span className="tracking-tighter text-xs font-medium text-blue-500 bg-blue-500 bg-opacity-10 rounded-full px-2 py-0.5">
-                Active
-              </span>
+              {repo.isNew && (
+                <span className="tracking-tighter text-xs font-medium rounded-full px-2 py-0.5 text-black/70 bg-yellow-300 dark:bg-yellow-300/10  dark:text-yellow-300">
+                  New
+                </span>
+              )}
             </div>
             <span className="text-xs text-neutral-500">{repo.description}</span>
           </a>
