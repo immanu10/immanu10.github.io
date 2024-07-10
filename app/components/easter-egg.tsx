@@ -19,7 +19,7 @@ export function EasterEgg() {
       {show && textToReveal}{" "}
       {!show && (
         <div
-          className={`text-red-600 font-medium text-sm cursor-pointer inline-block`}
+          className={`text-indigo-600 font-medium text-sm cursor-pointer inline-block`}
           onClick={() => setShow(!show)}
         >
           more

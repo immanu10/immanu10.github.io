@@ -82,7 +82,7 @@ export default async function Page() {
             href={repo.url}
           >
             <div className="flex items-center space-x-2">
-              <span className="text-sm underline underline-offset-4">
+              <span className="text-sm underline underline-offset-4 text-indigo-600 font-medium">
                 {repo.name}
               </span>
               {repo.isNew && (
