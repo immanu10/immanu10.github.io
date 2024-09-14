@@ -23,6 +23,8 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
 
   return (
     <header>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/cover.png" alt="red-pong-cover-image" />
       <div className="mb-8 flex justify-between items-center">
         <div>
           <h1 className="font-bold text-xl">manoj kumar</h1>

@@ -63,7 +63,7 @@ export default async function RootLayout({
     <html lang="en" className={roboto_mono.className}>
       <body className="antialiased min-h-screen">
         <Providers>
-          <div className="flex flex-col container pt-8">
+          <div className="flex flex-col container">
             <Topbar resumeLink={resumeLink} />
             <main className="mb-8">{children}</main>
             <Terminal />
