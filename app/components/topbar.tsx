@@ -14,9 +14,6 @@ const navItems = {
   "/projects": {
     name: "projects",
   },
-  "/blog": {
-    name: "blog",
-  },
 };
 
 export default function Topbar({ resumeLink }: { resumeLink: string }) {
@@ -99,6 +96,12 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
               </Link>
             );
           })}
+          <a
+            className="underline underline-offset-4"
+            href={"/blog"}
+            >
+            blog
+          </a>
         </div>
         <a
           className="underline underline-offset-4"
