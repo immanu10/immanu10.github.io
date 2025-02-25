@@ -14,6 +14,9 @@ const navItems = {
   "/projects": {
     name: "projects",
   },
+  "/blog": {
+    name: "blog",
+  },
 };
 
 export default function Topbar({ resumeLink }: { resumeLink: string }) {
