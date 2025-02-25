@@ -96,21 +96,23 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
               </Link>
             );
           })}
+        </div>
+        <div className="flex flex-row space-x-4 items-center">
           <a
             className="underline underline-offset-4"
             href={"/blog"}
-            >
+          >
             blog
           </a>
-        </div>
-        <a
-          className="underline underline-offset-4"
-          rel="noopener noreferrer"
-          target="_blank"
-          href={resumeLink}
-        >
+          <a
+            className="underline underline-offset-4"
+            rel="noopener noreferrer"
+            target="_blank"
+            href={resumeLink}
+          >
           resume
-        </a>
+          </a>
+        </div>
       </nav>
     </header>
   );
