@@ -24,7 +24,11 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
   return (
     <header>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/cover.png" alt="red-pong-cover-image" />
+      <img
+        src="/cover.png"
+        alt="red-pong-cover-image"
+        className="dark:hue-rotate-180 dark:invert-[1]"
+      />
       <div className="mb-8 flex justify-between items-center">
         <div>
           <h1 className="font-bold text-xl">manoj kumar</h1>
@@ -98,10 +102,7 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
           })}
         </div>
         <div className="flex flex-row space-x-4 items-center">
-          <a
-            className="underline underline-offset-4"
-            href={"/blog"}
-          >
+          <a className="underline underline-offset-4" href={"/blog"}>
             blog
           </a>
           <a
@@ -110,7 +111,7 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
             target="_blank"
             href={resumeLink}
           >
-          resume
+            resume
           </a>
         </div>
       </nav>
