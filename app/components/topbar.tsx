@@ -102,6 +102,9 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
           })}
         </div>
         <div className="flex flex-row space-x-4 items-center">
+          <a className="underline underline-offset-4" href={"/crafts"}>
+            crafts
+          </a>
           <a className="underline underline-offset-4" href={"/blog"}>
             blog
           </a>
