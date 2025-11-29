@@ -14,13 +14,16 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
     },
   ];
   return (
-    <header className="mt-8">
+    <header
+      className="py-8 bg-[radial-gradient(circle,#43200490_1px,transparent_1px)] 
+bg-[size:10px_10px]"
+    >
       <div>
         <h1 className="font-bold text-2xl">Manoj Kumar</h1>
         <p className="text-sm text-yellow-300 mt-1">
           Software Engineer // Bengaluru, India
         </p>
-        <nav className="mt-6 flex flex-col gap-4 underline-offset-8 decoration-yellow-900 text-sm">
+        <nav className="mt-6 flex gap-6 underline-offset-8 text-sm">
           {socialItems.map((item) => {
             return (
               <a
@@ -29,8 +32,8 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-yellow-300 mr-2 font-bold">{`>`}</span>
-                <span className="underline decoration-yellow-900">
+                <span className="text-yellow-300 mr-1 font-bold">{`>`}</span>
+                <span className="hover:underline decoration-yellow-900">
                   {item.name}
                 </span>
               </a>

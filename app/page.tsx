@@ -46,8 +46,8 @@ export default function Page() {
     },
   ];
   return (
-    <div className="my-12">
-      <div className="border-t border-yellow-950 py-8">
+    <div className="">
+      <div className="py-8">
         <h2 className="tracking-wide">00.About</h2>
         <p className="text-sm mt-4 text-neutral-400">
           Hello. I am a software engineer based in Bengaluru, coding for
@@ -57,10 +57,10 @@ export default function Page() {
           solutions.
         </p>
       </div>
-      <div className="border-t border-yellow-950 py-4">
+      <div className="border-t border-yellow-950/50 py-4">
         <h2 className="tracking-wide">02.Projects</h2>
         <div className="mt-4">
-          <ul className="divide-y divide-yellow-950">
+          <ul className="divide-y divide-yellow-950/50">
             {sideProjects.map((repo) => (
               <li key={repo.id} className="py-4">
                 <a rel="noopener noreferrer" target="_blank" href={repo.url}>
@@ -78,10 +78,10 @@ export default function Page() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-yellow-950 py-4">
+      <div className="border-t border-yellow-950/50 py-4">
         <h2 className="tracking-wide">03.Experience</h2>
         <div className=" mt-4">
-          <ul className="divide-y divide-yellow-950">
+          <ul className="divide-y divide-yellow-950/50">
             {experience.map((item) => (
               <li key={item.id} className="py-4">
                 <div className="flex flex-col gap-1">
@@ -107,7 +107,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="border-t border-yellow-950 pt-14 text-center text-neutral-700 text-xs">
+      <div className="border-t border-yellow-950/50 py-12 text-center text-neutral-700 text-xs">
         © {new Date().getFullYear()} Manoj Kumar. All rights reserved.
       </div>
     </div>
