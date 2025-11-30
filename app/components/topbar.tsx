@@ -14,10 +14,7 @@ export default function Topbar({ resumeLink }: { resumeLink: string }) {
     },
   ];
   return (
-    <header
-      className="py-8 bg-[radial-gradient(circle,#43200490_1px,transparent_1px)] 
-bg-[size:10px_10px]"
-    >
+    <header className="py-8 ">
       <div>
         <h1 className="font-bold text-2xl">Manoj Kumar</h1>
         <p className="text-sm text-yellow-300 mt-1">

@@ -1,4 +1,13 @@
 export default function Page() {
+  const skills = [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "TailwindCSS",
+    "Node.js",
+    "React Native",
+  ];
   const sideProjects = [
     {
       id: 0,
@@ -56,6 +65,21 @@ export default function Page() {
           design, clean code, and solving complex problems with simple
           solutions.
         </p>
+        <div>
+          <h3 className="text-sm mt-6 tracking-wide">
+            [Languages & Technologies]
+          </h3>
+          <div className="flex flex-wrap gap-3 mt-4">
+            {skills.map((skill, index) => (
+              <span
+                key={index}
+                className="text-sm font-medium rounded-full text-neutral-500"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="border-t border-yellow-950/50 py-4">
         <h2 className="tracking-wide">02.Projects</h2>
@@ -73,6 +97,19 @@ export default function Page() {
                     </p>
                   </div>
                 </a>
+                {repo.name === "Red Pong" ? (
+                  <p className="text-sm tracking-wide text-neutral-500 mt-2">
+                    You can try the web version here{" "}
+                    <a
+                      href="/redpong/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-yellow-300 font-medium"
+                    >
+                      /redpong
+                    </a>
+                  </p>
+                ) : null}
               </li>
             ))}
           </ul>
@@ -108,7 +145,7 @@ export default function Page() {
       </div>
 
       <div className="border-t border-yellow-950/50 py-12 text-center text-neutral-700 text-xs">
-        © {new Date().getFullYear()} Manoj Kumar. All rights reserved.
+        © {new Date().getFullYear()} Manoj Kumar.
       </div>
     </div>
   );
