@@ -6,7 +6,7 @@ export default function Page() {
     "Next.js",
     "TailwindCSS",
     "Node.js",
-    "React Native",
+    "React-Native",
   ];
   const sideProjects = [
     {
